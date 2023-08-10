@@ -42,7 +42,6 @@ body {
 .container2 {
   width: min(100% - 9vw, 1128px);
   margin-inline: auto;
-
 }
 nav {
   display: flex;
@@ -50,24 +49,37 @@ nav {
   /* padding-top: 20px; */
   align-items: center;
   height: 50px;
+  position: sticky;
 }
 
 .navs img {
-  /* width: 30px;
-  height: 30px; */
+  /* width: 30px; */
+  height: 30px;
   background-color: #000;
 }
 .navs:hover {
-  border-bottom: 2px solid #fff;
+  border-bottom: 2px solid transparent;
+  border-image: linear-gradient(
+    0.25turn,
+    hsl(136, 65%, 100%),
+    hsl(192, 70%, 0%)
+  );
+  border-image-slice: 1;
+  width: 100%;
+
 }
-.navs a{
+.navs a {
   color: #fff;
-  width: 40px;
+  /* width: 40px; */
   height: 40px;
+  padding-bottom: 4px;
 }
 .topnav {
+  border-bottom: 2px solid transparent;
   display: flex;
   gap: 20px;
+  height: inherit;
+  align-items: center;
 }
 header {
   height: auto;
@@ -87,42 +99,51 @@ header {
 .hero2 img {
   width: inherit;
   border-radius: 70px;
-  /* opacity: 0.8; */
   filter: grayscale(100%);
-
-} 
+}
 .hero2 {
   width: 70%;
   display: flex;
   justify-content: center;
 }
 .typo1 {
-  font-size: clamp(52px,2.5vw,55px);
-  font-weight: 400;
+  font-size: clamp(52px, 2.5vw, 55px);
+  font-weight: 600;
 }
 span {
   text-decoration: underline green 3px;
 }
 .typo2 {
-  font-size: 10px;
-  font-weight: 200;
+  font-size: 20px;
+  line-height: 150%;
+  font-weight: normal;
 }
 .typo3 a {
   font-size: 12px;
   text-transform: uppercase;
-  text-decoration: underline green 2px;
+  text-decoration: none;
   color: #fff;
+  padding-bottom: 5px;
 }
 .typo3 a:hover {
-  border-bottom: 1px solid #fff;
+  border-bottom: 2px solid transparent;
+  border-image: linear-gradient(
+    0.25turn,
+    hsl(136, 65%, 100%),
+    hsl(192, 70%, 0%)
+  );
+  border-image-slice: 1;
+  width: 100%;
 }
+/* .typoc {
+  text-align: center;
+} */
 
 .courses {
   display: flex;
   justify-content: space-around;
   align-items: center;
   flex-wrap: wrap;
-
 }
 
 .course {
@@ -141,10 +162,14 @@ article {
   display: grid;
   grid-template-columns: repeat(auto-fit, minmax(400px, 1fr));
   gap: 20px;
-
+  overflow: hidden;
 }
 .courses img {
   width: 60%;
+}
+.projectimg {
+  transition: all linear 0.2s;
+  
 }
 .projects {
   display: flex;
@@ -152,8 +177,8 @@ article {
   gap: 10px;
 }
 .projectimg:hover {
-  opacity: 0.3;
-
+  opacity: 0.7;
+  transform: scale(1.05);
 }
 
 .typop {
@@ -185,7 +210,6 @@ footer {
   text-transform: uppercase;
   text-decoration: underline green 2px;
   color: #fff;
-
 }
 input {
   background-color: transparent;
@@ -194,7 +218,6 @@ input {
   outline: none;
   border-bottom: 1px solid #ccc;
   color: #fff;
-
 }
 
 .typocy {
@@ -213,7 +236,7 @@ input {
   border-bottom: 1px solid #fff;
   width: 500px;
 }
-label{
+label {
   color: green;
 }
 form {
@@ -223,9 +246,9 @@ form {
   width: 80%;
 }
 .border {
-  border: 1px solid #444
+  border: 1px solid #444;
 }
-.footer1  {
+.footer1 {
   display: flex;
   justify-content: space-between;
   align-items: center;
@@ -235,7 +258,7 @@ form {
   display: flex;
   gap: 20px;
 }
- .svgimges {
+.svgimges {
   width: 100px;
 }
 button {
@@ -252,9 +275,9 @@ button:hover {
   background-color: #000;
   color: green;
 }
-@media screen and (max-width:750px) {
+@media screen and (max-width: 750px) {
   header {
-    flex-direction: column;
+    flex-direction: column-reverse;
   }
   .hero1 {
     width: 100%;
@@ -262,7 +285,10 @@ button:hover {
   }
   .typo1 {
     text-align: center;
-    font-size: clamp(35px,2.5vw,55px);
+    font-size: clamp(35px, 2.5vw, 55px);
+  }
+  .typo2 {
+    text-align: center;
   }
   .contacts {
     flex-direction: column-reverse;
@@ -275,9 +301,14 @@ button:hover {
     align-items: center;
   }
 }
-@media screen and (max-width:450px) {
+@media screen and (max-width: 450px) {
   header {
-    height: 467px;
+    flex-direction: column;
+    gap: 20px;
+  }
+  .typo2 {
+    font-size: 11px;
+    text-align: center;
   }
   .footer1 {
     flex-direction: column;
@@ -288,10 +319,15 @@ button:hover {
   article {
     grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
   }
-  
 }
-@media screen and (max-width:350px) {
+@media screen and (max-width: 380px) {
   form {
     gap: 30px;
+  }
+  .hero2 img {
+    border-radius: 0px;
+  }
+  .hero2 {
+    width: 80%;
   }
 }
