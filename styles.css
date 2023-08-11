@@ -330,9 +330,16 @@ button:hover {
     padding-top: 20px;
     height: auto;
   }
-    /* .courses img {
-    width: 80%;
-  } */
+    .courses img {
+    width: 75%;
+    /* height: 89px; */
+  }
+  .course {
+    gap: 5px;
+  }
+  .svgimges {
+    height: 80px;
+  }
   article {
     grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
   }
