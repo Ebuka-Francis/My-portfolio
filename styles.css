@@ -150,6 +150,8 @@ span {
   display: flex;
   flex-direction: column;
   gap: 10px;
+  width: inherit;
+  align-items: center;
 }
 .container1 {
   display: flex;
@@ -165,7 +167,7 @@ article {
   overflow: hidden;
 }
 .courses img {
-  width: 60%;
+  width: inherit;
 }
 .projectimg {
   transition: all linear 0.2s;
@@ -278,6 +280,10 @@ button:hover {
 @media screen and (max-width: 750px) {
   header {
     flex-direction: column-reverse;
+    margin-bottom: 40px;
+  }
+  .svgimges {
+    height: 100px;
   }
   .hero1 {
     width: 100%;
@@ -300,11 +306,17 @@ button:hover {
   .contactme {
     align-items: center;
   }
+  article {
+    gap: 40px;
+  }
 }
 @media screen and (max-width: 450px) {
   header {
     flex-direction: column;
     gap: 20px;
+  }
+  .hero1 {
+    gap: 30px;
   }
   .typo2 {
     font-size: 11px;
